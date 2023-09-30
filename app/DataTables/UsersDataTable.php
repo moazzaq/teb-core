@@ -62,7 +62,16 @@ class UsersDataTable extends DataTable
             ->setTableHeadClass('text-start text-muted fw-bold fs-7 text-uppercase gs-0')
             ->orderBy(2)
             ->buttons([
-                Button::make('excel')->exportOptions(['modifier' => ['page' => 'current']]),
+                Button::make('excel')->extend('excel')->exportOptions([
+                    'modifier' => [
+                        'page' => 'current'
+                    ]
+                ]),
+//                Button::make('excel')->extend('excel')->exportOptions([
+//                    'modifier' => [
+//                        'page' => 'all'
+//                    ]
+//                ])->text('Export All'),
                 Button::make('csv'),
 //                Button::make('pdf'),
                 Button::make('print'),

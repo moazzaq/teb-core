@@ -11,6 +11,7 @@
     <meta name="keywords"
           content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
@@ -26,7 +27,7 @@
     <script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 {{--    @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
-    @livewireStyles
+{{--    @livewireStyles--}}
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -113,35 +114,40 @@
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 <script>
-    document.addEventListener('livewire:load', () => {
-        Livewire.on('success', (message) => {
-            toastr.success(message);
-        });
-        Livewire.on('error', (message) => {
-            toastr.error(message);
-        });
-
-        Livewire.on('swal', (message, icon, confirmButtonText) => {
-            if (typeof icon === 'undefined') {
-                icon = 'success';
-            }
-            if (typeof confirmButtonText === 'undefined') {
-                confirmButtonText = 'Ok, got it!';
-            }
-            Swal.fire({
-                text: message,
-                icon: icon,
-                buttonsStyling: false,
-                confirmButtonText: confirmButtonText,
-                customClass: {
-                    confirmButton: 'btn btn-primary'
-                }
-            });
-        });
-    });
+    // document.addEventListener('livewire:load', () => {
+    //     Livewire.on('success', (message) => {
+    //         toastr.success(message);
+    //     });
+    //     Livewire.on('error', (message) => {
+    //         toastr.error(message);
+    //     });
+    //
+    //     Livewire.on('swal', (message, icon, confirmButtonText) => {
+    //         if (typeof icon === 'undefined') {
+    //             icon = 'success';
+    //         }
+    //         if (typeof confirmButtonText === 'undefined') {
+    //             confirmButtonText = 'Ok, got it!';
+    //         }
+    //         Swal.fire({
+    //             text: message,
+    //             icon: icon,
+    //             buttonsStyling: false,
+    //             confirmButtonText: confirmButtonText,
+    //             customClass: {
+    //                 confirmButton: 'btn btn-primary'
+    //             }
+    //         });
+    //     });
+    // });
+    // $(document).ready(function() {
+        // window.addEventListener('closeModal', event => {
+        //     $("#kt_modal_add_user").modal('hide');
+        // })
+    // })
 </script>
 
-@livewireScripts
+{{--@livewireScripts--}}
 </body>
 <!--end::Body-->
 

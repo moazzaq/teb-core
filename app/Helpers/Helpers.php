@@ -413,7 +413,7 @@ if (!function_exists('image')) {
      */
     function image($path)
     {
-        return asset('assets/media/'.$path);
+        return asset('backend/media/'.$path);
     }
 }
 
